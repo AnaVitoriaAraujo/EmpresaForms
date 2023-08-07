@@ -173,6 +173,7 @@
     <Compile Include="Consultar.Designer.cs">
       <DependentUpon>Consultar.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO.cs" />
     <Compile Include="Excluir.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -33,12 +33,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.uf = new System.Windows.Forms.MaskedTextBox();
+            this.telefone = new System.Windows.Forms.MaskedTextBox();
+            this.cpf = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.nome = new System.Windows.Forms.TextBox();
+            this.cidade = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -87,32 +87,32 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "CPF";
             // 
-            // maskedTextBox5
+            // uf
             // 
-            this.maskedTextBox5.Location = new System.Drawing.Point(236, 260);
-            this.maskedTextBox5.Mask = "aa";
-            this.maskedTextBox5.Name = "maskedTextBox5";
-            this.maskedTextBox5.Size = new System.Drawing.Size(226, 20);
-            this.maskedTextBox5.TabIndex = 19;
-            this.maskedTextBox5.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox5_MaskInputRejected);
+            this.uf.Location = new System.Drawing.Point(236, 260);
+            this.uf.Mask = "aa";
+            this.uf.Name = "uf";
+            this.uf.Size = new System.Drawing.Size(226, 20);
+            this.uf.TabIndex = 19;
+            this.uf.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox5_MaskInputRejected);
             // 
-            // maskedTextBox3
+            // telefone
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(236, 181);
-            this.maskedTextBox3.Mask = "(99)999999999";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(226, 20);
-            this.maskedTextBox3.TabIndex = 17;
-            this.maskedTextBox3.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox3_MaskInputRejected);
+            this.telefone.Location = new System.Drawing.Point(236, 181);
+            this.telefone.Mask = "99999999999";
+            this.telefone.Name = "telefone";
+            this.telefone.Size = new System.Drawing.Size(226, 20);
+            this.telefone.TabIndex = 17;
+            this.telefone.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox3_MaskInputRejected);
             // 
-            // maskedTextBox1
+            // cpf
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(236, 75);
-            this.maskedTextBox1.Mask = "999.999.999-99";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(226, 20);
-            this.maskedTextBox1.TabIndex = 15;
-            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            this.cpf.Location = new System.Drawing.Point(236, 75);
+            this.cpf.Mask = "99999999999";
+            this.cpf.Name = "cpf";
+            this.cpf.Size = new System.Drawing.Size(226, 20);
+            this.cpf.TabIndex = 15;
+            this.cpf.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // label1
             // 
@@ -124,19 +124,21 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "Cadastrar pessoa";
             // 
-            // textBox1
+            // nome
             // 
-            this.textBox1.Location = new System.Drawing.Point(236, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(226, 20);
-            this.textBox1.TabIndex = 26;
+            this.nome.Location = new System.Drawing.Point(236, 127);
+            this.nome.Name = "nome";
+            this.nome.Size = new System.Drawing.Size(226, 20);
+            this.nome.TabIndex = 26;
+            this.nome.TextChanged += new System.EventHandler(this.nome_TextChanged);
             // 
-            // textBox2
+            // cidade
             // 
-            this.textBox2.Location = new System.Drawing.Point(236, 224);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(226, 20);
-            this.textBox2.TabIndex = 27;
+            this.cidade.Location = new System.Drawing.Point(236, 224);
+            this.cidade.Name = "cidade";
+            this.cidade.Size = new System.Drawing.Size(226, 20);
+            this.cidade.TabIndex = 27;
+            this.cidade.TextChanged += new System.EventHandler(this.cidade_TextChanged);
             // 
             // button1
             // 
@@ -146,6 +148,7 @@
             this.button1.TabIndex = 28;
             this.button1.Text = "Inserir";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Cadastrar
             // 
@@ -153,19 +156,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(639, 354);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cidade);
+            this.Controls.Add(this.nome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.maskedTextBox5);
-            this.Controls.Add(this.maskedTextBox3);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.uf);
+            this.Controls.Add(this.telefone);
+            this.Controls.Add(this.cpf);
             this.Name = "Cadastrar";
             this.Text = "Cadastrar";
+            this.Load += new System.EventHandler(this.Cadastrar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,12 +182,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox5;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox uf;
+        private System.Windows.Forms.MaskedTextBox telefone;
+        private System.Windows.Forms.MaskedTextBox cpf;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox nome;
+        private System.Windows.Forms.TextBox cidade;
         private System.Windows.Forms.Button button1;
     }
 }

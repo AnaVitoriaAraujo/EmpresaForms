@@ -17,7 +17,9 @@ namespace Empresa
         Consultar con;
         Atualizar atu;
         Excluir exc;
-
+        DAO consul;
+        
+        
         public Form1()
         {
             InitializeComponent();
@@ -25,7 +27,11 @@ namespace Empresa
             con = new Consultar();
             atu = new Atualizar();
             exc = new Excluir();
+            consul = new DAO();
+            
         }
+
+       
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -42,13 +48,12 @@ namespace Empresa
         {
             atu.ShowDialog();
             
-        }//butao atualizar
+        }//botao atualizar
 
         private void button3_Click(object sender, EventArgs e)
         {
             con.ShowDialog();
-
-        }//butao consultar
+        }//botao consultar
 
         private void button4_Click(object sender, EventArgs e)
         {
